@@ -1,15 +1,23 @@
-// app/page.tsx or pages/index.tsx (depending on Next.js version)
-
+// pages/index.js
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function HomePage() {
+  const images = [
+    '/SFC_Credit.png',
+    '/TOT_Cover Art.png',
+    '/WOW 2019 RECAP card.png',
+    '/WHF_SFC_2chainz.jpg',
+    '/WHF_SFC_Mikeepps.jpg',
+    '/Chuck with camera.JPG'
+  ];
+
   return (
     <main className="min-h-screen bg-black text-white font-sans">
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-4 border-b border-gray-800">
-        <Image src="/WHF%20LOGO_BW.jpeg" alt="WHF Logo" width={100} height={40} />
+        <Image src="/WHF_LOGO_BW.png" alt="WHF Logo" width={100} height={40} />
         <nav className="space-x-6 text-sm md:text-base">
           <Link href="#work" className="hover:underline">Work</Link>
           <Link href="#services" className="hover:underline">Services</Link>
@@ -32,16 +40,7 @@ export default function HomePage() {
       {/* Carousel Section */}
       <section className="py-10 px-6 bg-black">
         <div className="overflow-x-auto whitespace-nowrap space-x-4 flex px-4">
-          {[
-            const images = [
-  '/SFC_Credit.png',
-  '/TOT_Cover Art.png',
-  '/WOW 2019 RECAP card.png',
-  '/WHF_SFC_2chainz.jpg',
-  '/WHF_SFC_Mikeepps.jpg',
-  '/Chuck with camera.JPG' // add this one here
-];
-          ].map((src, i) => (
+          {images.map((src, i) => (
             <Image
               key={i}
               src={src}
@@ -67,18 +66,11 @@ export default function HomePage() {
             <p className="text-gray-400">Launch or upgrade your content with branded openers, graphics, and reels.</p>
           </div>
           <div className="bg-black p-6 rounded-xl border border-gray-700 shadow-md">
-            <h3 className="text-xl font-bold mb-2">🔁 Recurring Content Plans</h3>
+            <h3 className="text-xl font-bold mb-2">📅 Recurring Content Plans</h3>
             <p className="text-gray-400">Monthly plans for social content, campaigns, and marketing support.</p>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer id="contact" className="py-10 px-6 text-center border-t border-gray-800">
-        <Image src="/WHF%20LOGO_BW.jpeg" alt="WHF Logo" width={80} height={30} className="mx-auto mb-4" />
-        <p className="text-sm text-gray-500">© {new Date().getFullYear()} Whitehouse Films. All rights reserved.</p>
-        <p className="text-sm text-gray-500 mt-2">Contact: info@whitehousefilms.com</p>
-      </footer>
     </main>
   );
 }
