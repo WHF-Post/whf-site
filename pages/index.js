@@ -42,12 +42,11 @@ export default function HomePage() {
         <div className="overflow-x-auto whitespace-nowrap space-x-4 flex px-4">
           {images.map((src, i) => (
             <Image
-              key={i}
-              src={src}
-              alt={`carousel image ${i}`}
-              width={200}
-              height={120}
-              className="rounded-lg inline-block"
+  key={i}
+  src={src}
+  alt={`carousel image ${i}`}
+  className="h-[160px] w-auto rounded-lg object-cover inline-block"
+/>
             />
           ))}
         </div>
