@@ -33,12 +33,14 @@ export default function HomePage() {
       <section className="py-10 px-6 bg-black">
         <div className="overflow-x-auto whitespace-nowrap space-x-4 flex px-4">
           {[
-            '/SFC_Credit.png',
-            '/TOT_Cover Art.png',
-            '/WOW 2019 RECAP card.png',
-            '/WHF_SFC_2chainz.jpg',
-            '/WHF_SFC_Mikeepps.jpg',
-            '/WHF_SFC_Mikeepps2.jpg'
+            const images = [
+  '/SFC_Credit.png',
+  '/TOT_Cover Art.png',
+  '/WOW 2019 RECAP card.png',
+  '/WHF_SFC_2chainz.jpg',
+  '/WHF_SFC_Mikeepps.jpg',
+  '/Chuck with camera.JPG' // add this one here
+];
           ].map((src, i) => (
             <Image
               key={i}
