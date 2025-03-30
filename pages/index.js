@@ -5,12 +5,40 @@ import Link from 'next/link';
 
 export default function HomePage() {
   const images = [
-    '/SFC_Credit.png',
-    '/TOT_Cover Art.png',
-    '/WOW 2019 RECAP card.png',
-    '/WHF_SFC_2chainz.jpg',
-    '/WHF_SFC_Mikeepps.jpg',
-    '/Chuck with camera.JPG'
+  '/WHF_LOGO_BW.png',
+  '/SFC_Credit.png',
+  '/TOT_Cover Art.png',
+  '/WOW 2019 RECAP card.png',
+  '/WHF_SFC_2chainz.jpg',
+  '/WHF_SFC_Mikeepps.jpg',
+  '/Chuck with camera.JPG',
+  '/WHF_Crew1.jpg',
+  '/WHF_Crew2.jpg',
+  '/WHF_SFC_2Juvenile1.jpg',
+  '/WHF_SFC_Mikeepps2.jpg',
+  '/WHF_SFC_DanceBattle.png',
+  '/WHF_SFC_tablet.png',
+  '/WHF_Keyboard_1.png',
+  '/WHF_Keyboard2.png',
+  '/WHF_LatoyaLucketPlay.png',
+  '/WHF_MIB3_Edit.png',
+  '/WHF_MMG_Edit.png',
+  '/WHF_MackWilds.png',
+  '/WHF_KdotSFCopen.png',
+  '/WHF_Keenan.png',
+  '/WHF_NextEdit.png',
+  '/WHF_ChuckBMCC.png',
+  '/WHF_ChuckDJ_SFC.png',
+  '/WHF_ChuckandBootsie.png',
+  '/WHF_ChuckLive.png',
+  '/WHF_SchoologEdit.png',
+  '/WHF_Shootequipment.png',
+  '/WHF_SateliteTruck_echo.png',
+  '/BWIH MAIN LOGO TEMP.png',
+  '/R3d_gym shoot 1.jpg',
+  '/R3d_Gympost.jpg',
+  '/WHF_LOGO_ANIM.gif'
+];
   ];
 
   return (
