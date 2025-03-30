@@ -11,34 +11,20 @@ export default function HomePage() {
   '/WOW 2019 RECAP card.png',
   '/WHF_SFC_2chainz.jpg',
   '/WHF_SFC_Mikeepps.jpg',
+  '/WHF_SFC_Mikeepps2.jpg',
   '/Chuck with camera.JPG',
   '/WHF_Crew1.jpg',
   '/WHF_Crew2.jpg',
-  '/WHF_SFC_2Juvenile1.jpg',
-  '/WHF_SFC_Mikeepps2.jpg',
-  '/WHF_SFC_DanceBattle.png',
-  '/WHF_SFC_tablet.png',
   '/WHF_Keyboard_1.png',
   '/WHF_Keyboard2.png',
-  '/WHF_LatoyaLucketPlay.png',
-  '/WHF_MIB3_Edit.png',
-  '/WHF_MMG_Edit.png',
-  '/WHF_MackWilds.png',
+  '/WHF_Keena.png',
   '/WHF_KdotSFCopen.png',
-  '/WHF_Keenan.png',
-  '/WHF_NextEdit.png',
-  '/WHF_ChuckBMCC.png',
-  '/WHF_ChuckDJ_SFC.png',
-  '/WHF_ChuckandBootsie.png',
-  '/WHF_ChuckLive.png',
+  '/WHF_SFC_2Juvenile1.jpg',
+  '/WHF_SFC_DanceBattle.png',
+  '/WHF_SFC_Truck_echo.png',
+  '/WHF_SFC_tablet.png',
   '/WHF_SchoologEdit.png',
-  '/WHF_Shootequipment.png',
-  '/WHF_SateliteTruck_echo.png',
-  '/BWIH MAIN LOGO TEMP.png',
-  '/R3d_gym shoot 1.jpg',
-  '/R3d_Gympost.jpg',
-  '/WHF_LOGO_ANIM.gif'
-];
+  '/WHF_Logo_ANIM.gif'
   ];
 
   return (
@@ -68,15 +54,14 @@ export default function HomePage() {
       {/* Carousel Section */}
       <section className="py-10 px-6 bg-black">
         <div className="overflow-x-auto whitespace-nowrap space-x-4 flex px-4">
-          {images.map((src, i) => (
-            <Image
+{images.map((src, i) => (
+<img
   key={i}
   src={src}
   alt={`carousel image ${i}`}
-  className="h-[160px] w-auto rounded-lg object-cover inline-block"
+  className="h-[160px] w-auto rounded-lg inline-block object-contain"
 />
-            />
-          ))}
+))}
         </div>
       </section>
 
