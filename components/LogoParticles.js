@@ -10,9 +10,10 @@ export default function LogoParticles() {
     <div className="relative w-full h-screen flex flex-col items-center justify-center bg-black text-white">
       {/* Particle Background */}
       <div className="absolute top-0 left-0 w-full h-full z-0">
-        <Particles
-          id="tsparticles"
-          options={{
+        {/* <Particles
+  id="tsparticles"
+  options={{ ... }}
+/> */}
             fullScreen: { enable: false },
             background: { color: '#000000' },
             fpsLimit: 60,
