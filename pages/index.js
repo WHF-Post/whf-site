@@ -1,8 +1,11 @@
-// pages/index.js
-import React from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import LogoParticles from '../components/LogoParticles'; // ✅ Import the new component
+
+// ✅ Import LogoParticles using dynamic() with SSR turned off
+const LogoParticles = dynamic(() => import('../components/LogoParticles'), {
+  ssr: false,
+});
 
 export default function HomePage() {
   return (
@@ -18,25 +21,12 @@ export default function HomePage() {
         </nav>
       </header>
 
-     {/* Hero Section with Particles */}
-<section className="relative h-[90vh] w-full bg-black text-white overflow-hidden flex items-center justify-center">
-  <LogoParticles /> {/* Animated background */}
-  
-  <div className="relative z-10 text-center px-4">
-    <h1 className="text-5xl md:text-6xl font-bold mb-6">
-      We Don’t Just Cut. We Create.
-    </h1>
-    <p className="text-lg text-gray-400 mb-8 max-w-xl mx-auto">
-      Whitehouse Films is a post studio trusted by brands, networks & creators to turn raw footage into cinematic stories.
-    </p>
-    <Link href="/work">
-      <button className="text-black bg-white px-6 py-3 text-lg rounded-full hover:bg-gray-200">
-        View Work
-      </button>
-    </Link>
-  </div>
-</section>
-      {/* Services Tease */}
+      {/* Hero Section */}
+      <section className="relative h-[90vh] w-full bg-black text-white overflow-hidden flex items-center justify-center">
+        <LogoParticles /> {/* ✅ Rendered only on client now */}
+      </section>
+
+      {/* Services Section */}
       <section id="services" className="py-16 px-6 bg-gray-900">
         <h2 className="text-3xl font-semibold text-center mb-10">What We Do</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
