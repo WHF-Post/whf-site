@@ -54,11 +54,11 @@ export default function LogoParticles() {
         </p>
 
         {/* ✅ Fixed Link */}
-        <Link href="/about" passHref>
-          <a className="mt-6 px-6 py-3 text-lg rounded-full bg-blue-600 hover:bg-blue-800 transition-all duration-200 glitch-glow inline-block text-center">
-            About WHF
-          </a>
-        </Link>
+     <Link href="/about" passHref legacyBehavior>
+  <a className="mt-6 px-6 py-3 text-lg rounded-full bg-blue-600 hover:bg-blue-800 transition-all duration-200 glitch-glow inline-block text-center">
+    About WHF
+  </a>
+</Link>
       </div>
     </div>
   );
