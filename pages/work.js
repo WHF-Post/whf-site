@@ -93,4 +93,60 @@ export default function Work() {
       {Object.keys(grouped).map((section) => (
         <div key={section} className="mb-14">
           <h2 className="text-3xl font-semibold mb-6 border-b border-gray-700 pb-2">{section}</h2>
-          <div className="grid md
+          <div className="grid md:grid-cols-3 gap-6">
+            {grouped[section].map((video, idx) => (
+              <div
+                key={idx}
+                onClick={() => !video.isExternal && setActiveVideo(video.url)}
+                className="bg-gray-900 rounded-lg p-4 cursor-pointer hover:ring-2 hover:ring-blue-500"
+              >
+                <div className="h-48 bg-gray-800 rounded mb-3 flex items-center justify-center text-center text-sm text-gray-400">
+                  {video.thumbnail ? (
+                    <img
+                      src={video.thumbnail}
+                      alt={video.title}
+                      className="h-full w-full object-cover rounded"
+                    />
+                  ) : (
+                    <span>{video.title}</span>
+                  )}
+                </div>
+                {!video.thumbnail && <p className="text-sm text-gray-400">{video.title}</p>}
+                {video.isExternal && (
+                  <a
+                    href={video.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 underline"
+                  >
+                    Watch Now
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      {activeVideo && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+          <div className="relative w-full max-w-4xl p-6">
+            <iframe
+              src={activeVideo}
+              className="w-full aspect-video rounded-lg"
+              frameBorder="0"
+              allowFullScreen
+              title="WHF Video Preview"
+            ></iframe>
+            <button
+              className="absolute top-2 right-4 text-white text-2xl"
+              onClick={() => setActiveVideo(null)}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
