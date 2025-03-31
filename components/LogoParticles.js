@@ -11,35 +11,35 @@ export default function LogoParticles() {
     await loadFull(main);
   }, []);
 
-  return (
-    <div className="relative w-full h-screen flex flex-col items-center justify-center bg-black text-white">
-      
-      {/* Particle Background */}
-      <div className="absolute top-0 left-0 w-full h-full z-0">
-        <Particles
-          id="tsparticles"
-          init={particlesInit}
-          options={{
-            fullScreen: { enable: false },
-            background: { color: '#000000' },
-            fpsLimit: 60,
-            particles: {
-              number: { value: 80 },
-              color: { value: '#00BFFF' },
-              links: {
-                enable: true,
-                color: '#00BFFF',
-                distance: 150,
-                opacity: 0.4,
-                width: 1,
-              },
-              move: { enable: true, speed: 1 },
-              size: { value: 2 },
-              opacity: { value: 0.5 },
+ return (
+  <div className="relative w-full h-screen flex items-center justify-center bg-black text-white">
+    <div className="absolute top-0 left-0 w-full h-full z-0">
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          fullScreen: { enable: false },
+          background: { color: '#000000' },
+          fpsLimit: 60,
+          particles: {
+            number: { value: 80 },
+            color: { value: '#00BFFF' },
+            links: {
+              enable: true,
+              color: '#00BFFF',
+              distance: 150,
+              opacity: 0.4,
+              width: 1,
             },
-          }}
-        />
-      </div>
+            move: { enable: true, speed: 1 },
+            size: { value: 2 },
+            opacity: { value: 0.5 },
+          },
+        }}
+      />
+    </div>
+  </div>
+);
 
       {/* Foreground Content */}
       <div className="relative z-10 flex flex-col items-center text-center">
