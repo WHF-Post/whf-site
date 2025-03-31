@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Particles from 'react-tsparticles';
+import Particles from '@tsparticles/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
