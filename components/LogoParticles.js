@@ -1,23 +1,24 @@
-// components/LogoParticles.js
-import React from 'react';
+'use client'; // this line helps avoid SSR issues in newer Next.js
+
+import React, { useCallback } from 'react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function LogoParticles() {
-  const particlesInit = async (main) => {
-    await loadFull(main);
-  };
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
+  }, []);
 
   return (
-    <>
+    <div className="relative w-full h-full flex flex-col items-center justify-center bg-black text-white">
       <Particles
         id="tsparticles"
         init={particlesInit}
         options={{
           fullScreen: { enable: false },
-          background: { color: '#000' },
+          background: { color: '#000000' },
           fpsLimit: 60,
           particles: {
             number: { value: 80 },
@@ -37,8 +38,14 @@ export default function LogoParticles() {
         className="absolute top-0 left-0 w-full h-full"
       />
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-        <Image src="/logo.png" alt="WHF Logo" width={300} height={300} priority className="z-10" />
+      <div className="relative z-10 text-center">
+        <Image
+          src="/logo.png"
+          alt="WHF Logo"
+          width={300}
+          height={300}
+          className="mx-auto"
+        />
         <h1 className="text-white text-2xl md:text-3xl font-light mt-8">
           Authentic Stories. Polished Cuts.
         </h1>
@@ -51,6 +58,6 @@ export default function LogoParticles() {
           </button>
         </Link>
       </div>
-    </>
+    </div>
   );
 }
