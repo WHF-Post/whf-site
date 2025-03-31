@@ -48,8 +48,10 @@ export default function LogoParticles() {
         <p className="text-gray-400 mt-2 max-w-md mx-auto">
           Whitehouse Films is a post studio trusted by brands, networks & creators to turn raw footage into cinematic stories.
         </p>
-<Link href="/about" className="mt-6 px-6 py-3 text-lg rounded-full bg-blue-600 hover:bg-blue-800 transition-all duration-200 glitch-glow inline-block text-center">
-  About WHF
+<Link href="/about">
+  <a className="mt-6 px-6 py-3 text-lg rounded-full bg-blue-600 hover:bg-blue-800 transition-all duration-200 glitch-glow inline-block text-center">
+    About WHF
+  </a>
 </Link>
       </div>
     </div>
