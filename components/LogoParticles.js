@@ -16,7 +16,6 @@ export default function LogoParticles() {
     <div className="absolute top-0 left-0 w-full h-full z-0">
       <Particles
         id="tsparticles"
-        init={particlesInit}
         options={{
           fullScreen: { enable: false },
           background: { color: '#000000' },
