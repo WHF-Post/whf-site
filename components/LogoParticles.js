@@ -1,4 +1,4 @@
-'use client'; // prevents SSR issues in some Next.js setups
+'use client';
 
 import React, { useCallback } from 'react';
 import Particles from 'react-tsparticles';
@@ -7,12 +7,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function LogoParticles() {
-  const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
+  const particlesInit = useCallback(async (main) => {
+    await loadFull(main);
   }, []);
 
   return (
-    <div className="relative w-full h-full flex flex-col items-center justify-center bg-black text-white">
+    <div className="relative w-full h-screen flex flex-col items-center justify-center bg-black text-white">
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -38,22 +38,26 @@ export default function LogoParticles() {
         className="absolute top-0 left-0 w-full h-full"
       />
 
-      <div className="relative z-10 text-center">
-        <Image
-          src="/logo.png"
-          alt="WHF Logo"
-          width={300}
-          height={300}
-          className="mx-auto"
-        />
-        <h1 className="text-white text-2xl md:text-3xl font-light mt-8">
+      {/* White Logo */}
+      <Image
+        src="/logo.png"
+        alt="WHF Logo"
+        width={300}
+        height={300}
+        className="z-10"
+        priority
+      />
+
+      {/* Tagline & CTA */}
+      <div className="text-center z-10 mt-8">
+        <h1 className="text-white text-2xl md:text-3xl font-light">
           Authentic Stories. Polished Cuts.
         </h1>
         <p className="text-gray-400 mt-2 max-w-md mx-auto">
           Whitehouse Films is a post studio trusted by brands, networks & creators to turn raw footage into cinematic stories.
         </p>
         <Link href="/about">
-          <button className="mt-6 px-6 py-3 text-lg rounded-full bg-blue-600 hover:bg-blue-800 transition-all duration-200">
+          <button className="mt-6 px-6 py-3 text-lg rounded-full bg-blue-600 hover:bg-blue-800 transition-all duration-200 glitch-glow">
             About WHF
           </button>
         </Link>
