@@ -53,7 +53,7 @@ export default function LogoParticles() {
     About WHF
   </a>
 </Link>
-      </div>
+
     </div>
   );
 }
