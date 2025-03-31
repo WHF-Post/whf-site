@@ -1,4 +1,4 @@
-'use client'; // this line helps avoid SSR issues in newer Next.js
+'use client'; // prevents SSR issues in some Next.js setups
 
 import React, { useCallback } from 'react';
 import Particles from 'react-tsparticles';
