@@ -1,35 +1,25 @@
 // pages/index.js
-import React from 'react';
-
 export default function HomePage() {
   return (
-    <div style={{ margin: 0, padding: 0, overflowX: 'hidden' }}>
-      {/* Fullscreen looping video background */}
+    <div className="relative overflow-x-hidden">
+      {/* Fullscreen video background */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: '100vh',
-          objectFit: 'cover',
-          zIndex: -1,
-        }}
+        className="fixed top-0 left-0 w-screen h-screen object-cover z-[-1]"
       >
         <source src="/WHF_Homepage_Video_converted.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      {/* Smooth scroll layout */}
-      <div style={{ scrollBehavior: 'smooth' }}>
-        {/* Home Spacer */}
-        <section id="home" style={{ height: '100vh' }}></section>
+      {/* Scroll sections wrapper */}
+      <div className="relative scroll-smooth">
+        {/* HOME */}
+        <section id="home" className="h-screen"></section>
 
-        {/* About Section */}
+        {/* ABOUT */}
         <section id="about" className="py-20 px-6 bg-black text-white scroll-mt-20">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-semibold mb-6">Who We Are</h2>
@@ -45,55 +35,81 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section id="services" className="bg-[#111] text-white py-20 px-6 scroll-mt-20">
+        {/* SERVICES */}
+        <section id="services" className="py-20 px-6 bg-[#111] text-white scroll-mt-20">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-semibold mb-10 text-center">What We Do</h2>
-
             <div className="space-y-10">
               <div>
                 <h3 className="text-2xl font-semibold mb-2">🎬 Editing Services</h3>
-                <p className="text-gray-300">Professional editing for documentaries, branded content, and episodic series.</p>
+                <p className="text-gray-300">
+                  Professional editing for documentaries, branded content, and episodic series.
+                </p>
               </div>
-
               <div>
                 <h3 className="text-2xl font-semibold mb-2">🚀 Influencer Packages</h3>
-                <p className="text-gray-300">Launch or upgrade your content with branded openers, graphics, and reels.</p>
+                <p className="text-gray-300">
+                  Launch or upgrade your content with branded openers, graphics, and reels.
+                </p>
               </div>
-
               <div>
                 <h3 className="text-2xl font-semibold mb-2">🔁 Recurring Content Plans</h3>
-                <p className="text-gray-300">Monthly plans for social content, campaigns, and marketing support.</p>
+                <p className="text-gray-300">
+                  Monthly plans for social content, campaigns, and marketing support.
+                </p>
               </div>
-
               <div>
                 <h3 className="text-2xl font-semibold mb-2">🎓 Education</h3>
-                <p className="text-gray-300">Beginner editing course launching soon in partnership with Artistic Heights Academy.</p>
+                <p className="text-gray-300">
+                  Beginner editing course launching soon in partnership with Artistic Heights Academy.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="bg-black text-white py-20 px-6 scroll-mt-20">
+        {/* CONTACT */}
+        <section id="contact" className="py-20 px-6 bg-black text-white scroll-mt-20">
           <div className="max-w-xl mx-auto text-center">
             <h2 className="text-4xl font-semibold mb-8">Let’s Connect</h2>
-
             <form
               action="https://formspree.io/f/mjvnolzn"
               method="POST"
               className="space-y-6"
             >
-              <input type="text" name="name" placeholder="Your Name" required className="w-full px-4 py-3 rounded bg-gray-800 text-white focus:outline-none" />
-              <input type="email" name="email" placeholder="Your Email" required className="w-full px-4 py-3 rounded bg-gray-800 text-white focus:outline-none" />
-              <textarea name="message" rows="5" placeholder="Your Message" required className="w-full px-4 py-3 rounded bg-gray-800 text-white focus:outline-none"></textarea>
-              <button type="submit" className="bg-blue-600 hover:bg-blue-800 transition-all duration-200 px-6 py-3 rounded text-lg">Send</button>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                className="w-full px-4 py-3 rounded bg-gray-800 text-white focus:outline-none"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                className="w-full px-4 py-3 rounded bg-gray-800 text-white focus:outline-none"
+              />
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Your Message"
+                required
+                className="w-full px-4 py-3 rounded bg-gray-800 text-white focus:outline-none"
+              ></textarea>
+              <button
+                type="submit"
+                className="bg-blue-600 hover:bg-blue-800 transition-all duration-200 px-6 py-3 rounded text-lg"
+              >
+                Send
+              </button>
             </form>
 
             <div className="flex justify-center gap-6 mt-10">
-              <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Instagram</a>
-              <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Twitter</a>
-              <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">LinkedIn</a>
+              <a href="https://instagram.com/yourhandle" className="text-blue-400 hover:underline" target="_blank">Instagram</a>
+              <a href="https://twitter.com/yourhandle" className="text-blue-400 hover:underline" target="_blank">Twitter</a>
+              <a href="https://linkedin.com/in/yourhandle" className="text-blue-400 hover:underline" target="_blank">LinkedIn</a>
             </div>
           </div>
         </section>
