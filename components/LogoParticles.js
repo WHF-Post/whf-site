@@ -1,33 +1,48 @@
 'use client';
 
 import { useCallback } from 'react';
-import Particles from '@tsparticles/react';
+import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 
 export default function LogoParticles() {
-  const particlesInit = useCallback(async engine => {
+  const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
 
   return (
-    <div style={{ position: 'absolute', width: '100%', height: '100%' }}>
+    <div style={{ width: '100vw', height: '100vh', backgroundColor: '#000' }}>
       <Particles
         id="tsparticles"
         init={particlesInit}
         options={{
-          background: { color: '#000000' },
+          background: {
+            color: '#000000',
+          },
           fpsLimit: 60,
           particles: {
-            number: { value: 50 },
-            color: { value: '#ffffff' },
-            shape: { type: 'circle' },
-            opacity: { value: 0.5 },
-            size: { value: 3 },
-            move: { enable: true, speed: 2 },
+            number: {
+              value: 60,
+            },
+            color: {
+              value: '#ffffff',
+            },
+            shape: {
+              type: 'circle',
+            },
+            opacity: {
+              value: 0.5,
+            },
+            size: {
+              value: 2,
+            },
+            move: {
+              enable: true,
+              speed: 1,
+            },
             links: {
               enable: true,
-              color: '#ffffff',
               distance: 150,
+              color: '#ffffff',
               opacity: 0.4,
               width: 1,
             },
