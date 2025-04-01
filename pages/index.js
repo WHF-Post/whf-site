@@ -1,9 +1,9 @@
-import dynamic from 'next/dynamic';
-
-const LogoParticles = dynamic(() => import('../components/LogoParticles'), {
-  ssr: false,
-});
+import LogoParticles from '../components/LogoParticles';
 
 export default function HomePage() {
-  return <LogoParticles />;
+  return (
+    <div style={{ height: '100vh', backgroundColor: 'black' }}>
+      <LogoParticles />
+    </div>
+  );
 }
