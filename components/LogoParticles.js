@@ -1,19 +1,13 @@
 'use client';
 
-import { useCallback } from 'react';
+import React from 'react';
 import Particles from '@tsparticles/react';
-import { loadFull } from 'tsparticles';
 
 export default function LogoParticles() {
-  const particlesInit = useCallback(async engine => {
-    await loadFull(engine);
-  }, []);
-
   return (
     <div className="w-full h-screen bg-black relative">
       <Particles
         id="tsparticles"
-        init={particlesInit}
         options={{
           fullScreen: { enable: false },
           background: { color: '#000000' },
