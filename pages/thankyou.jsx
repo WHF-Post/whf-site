@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function ThankYou() {
   return (
@@ -27,10 +28,16 @@ export default function ThankYou() {
           Thanks for stopping by. Don&apos;t do me like Ne-Yo did Africa!
         </p>
 
-        <p className="text-base text-gray-400 max-w-xl mx-auto italic">
+        <p className="text-base text-gray-400 max-w-xl mx-auto italic mb-12">
           Production is hard, but we’re used to being the last one with the ball —
           always getting across the finish line. Talk soon!
         </p>
+
+        <Link href="/">
+          <button className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-800 transition-all duration-200 glitch-glow">
+            Return to Homepage
+          </button>
+        </Link>
       </div>
     </>
   );
