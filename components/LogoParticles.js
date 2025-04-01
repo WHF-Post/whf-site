@@ -1,8 +1,9 @@
 'use client';
 
 import { useCallback } from 'react';
-import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
+import { Engine } from 'tsparticles-engine';
+import Particles from 'react-tsparticles';
 
 export default function LogoParticles() {
   const particlesInit = useCallback(async (engine) => {
@@ -10,45 +11,43 @@ export default function LogoParticles() {
   }, []);
 
   return (
-    <div style={{ width: '100vw', height: '100vh', backgroundColor: '#000' }}>
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={{
-          background: {
-            color: '#000000',
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      options={{
+        background: {
+          color: '#000',
+        },
+        fpsLimit: 60,
+        particles: {
+          number: {
+            value: 100,
           },
-          fpsLimit: 60,
-          particles: {
-            number: {
-              value: 60,
-            },
-            color: {
-              value: '#ffffff',
-            },
-            shape: {
-              type: 'circle',
-            },
-            opacity: {
-              value: 0.5,
-            },
-            size: {
-              value: 2,
-            },
-            move: {
-              enable: true,
-              speed: 1,
-            },
-            links: {
-              enable: true,
-              distance: 150,
-              color: '#ffffff',
-              opacity: 0.4,
-              width: 1,
-            },
+          color: {
+            value: '#ffffff',
           },
-        }}
-      />
-    </div>
+          shape: {
+            type: 'circle',
+          },
+          opacity: {
+            value: 0.5,
+          },
+          size: {
+            value: 3,
+          },
+          move: {
+            enable: true,
+            speed: 1,
+          },
+          links: {
+            enable: true,
+            color: '#ffffff',
+            distance: 150,
+            opacity: 0.4,
+            width: 1,
+          },
+        },
+      }}
+    />
   );
 }
