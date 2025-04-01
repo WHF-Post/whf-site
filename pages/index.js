@@ -1,33 +1,49 @@
+// pages/index.js
+'use client';
+
+import React from 'react';
+
 export default function HomePage() {
   return (
-    <div style={{ margin: 0, padding: 0, overflowX: 'hidden' }}>
-      {/* Fullscreen looping video background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: '100vh',
-          objectFit: 'cover',
-          zIndex: -1,
-        }}
-      >
-        <source src="/WHF_Homepage_Video_converted.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <div className="text-white font-sans scroll-smooth">
+      {/* Fullscreen video background */}
+      <section id="home" className="relative h-screen w-full overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          src="/WHF_Homepage_Video_converted.mp4"
+        />
+        <div className="relative z-10 flex items-end justify-center h-full pb-10">
+          <a href="#about" className="text-white text-xl underline hover:text-blue-400 transition">
+            Scroll to About ↓
+          </a>
+        </div>
+      </section>
 
-      {/* Smooth scroll layout */}
-      <div style={{ scrollBehavior: 'smooth' }}>
-        <section id="home" style={{ height: '100vh' }}></section>
-        <section id="about" style={{ height: '100vh', backgroundColor: '#111' }}></section>
-        <section id="services" style={{ height: '100vh', backgroundColor: '#222' }}></section>
-        <section id="contact" style={{ height: '100vh', backgroundColor: '#333' }}></section>
-      </div>
+      {/* About Section */}
+      <section id="about" className="min-h-screen bg-black px-6 py-20">
+        <h2 className="text-3xl font-semibold mb-4">About WHF</h2>
+        <p className="text-gray-300 max-w-2xl">
+          Whitehouse Films is a post studio trusted by brands, networks, and creators to turn raw footage into cinematic stories.
+        </p>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="min-h-screen bg-gray-900 px-6 py-20">
+        <h2 className="text-3xl font-semibold mb-4">Services</h2>
+        <p className="text-gray-300 max-w-2xl">
+          From editing to influencer content packages, WHF delivers sharp storytelling with polished visuals.
+        </p>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="min-h-screen bg-black px-6 py-20">
+        <h2 className="text-3xl font-semibold mb-4">Contact</h2>
+        <p className="text-gray-300 max-w-2xl">Let's connect and bring your vision to life.</p>
+      </section>
     </div>
   );
 }
