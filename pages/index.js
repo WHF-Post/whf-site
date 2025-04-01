@@ -1,13 +1,7 @@
-import dynamic from 'next/dynamic';
-
-const LogoParticles = dynamic(() => import('../components/LogoParticles'), {
-  ssr: false,
-});
-
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <LogoParticles />
+    <div style={{ minHeight: '100vh', backgroundColor: 'black', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <h1>🚀 WHF is live</h1>
     </div>
   );
 }
