@@ -2,17 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Typewriter effect support */
-.typewriter-text {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid white;
-  animation: typewriter 2s steps(20) forwards, blink 0.75s step-end infinite;
-}
-
-/* Optional: blink animation if not defined in tailwind.config.js */
-@keyframes blink {
-  50% {
-    border-color: transparent;
+/* Optional: Typewriter animation (you already added in tailwind.config.js) */
+@layer utilities {
+  .animate-typewriter {
+    animation: typewriter 2s steps(20) forwards;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid white;
   }
 }
