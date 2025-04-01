@@ -12,27 +12,20 @@ export default function HomePage() {
       >
         <source src="/WHF_Homepage_Video_converted.mp4" type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
+      <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="fixed top-0 left-0 w-full h-full object-cover z-[-1]"
+>
+  <source src="/WHF_Homepage_Video_converted.mp4" type="video/mp4" />
+</video>
 
-      {/* Scroll sections wrapper */}
-      <div className="relative scroll-smooth">
-        {/* HOME */}
-        <section id="home" className="h-screen"></section>
-
-        {/* ABOUT */}
-        <section id="about" className="py-20 px-6 bg-black text-white scroll-mt-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-semibold mb-6">Who We Are</h2>
-            <p className="text-gray-400 text-lg leading-relaxed">
-              Whitehouse Films is the creative lab of Charles White — an award-winning editor, filmmaker, and storyteller with 20+ years in the game. From major networks like BET, Fox News, and NFL Films to viral podcast moments and branded campaigns, WHF transforms raw footage into cinematic stories that connect.
-            </p>
-            <p className="text-gray-500 mt-6 text-base leading-relaxed">
-              Based in North Carolina, rooted in Newark, and shaped by years in New York’s post-production trenches, WHF brings grit, polish, and purpose to every frame. Whether you're launching a docuseries, building a brand, or just tired of basic edits, you're in the right place.
-            </p>
-            <p className="text-blue-400 text-xl font-mono mt-10 inline-block border-r-2 border-blue-400 whitespace-nowrap overflow-hidden animate-typewriter">
-              — Charles White
-            </p>
-          </div>
+{/* ✅ Diagnostic Test Block */}
+<div className="bg-red-500 text-white p-4 text-center z-10 relative">
+  CHECK — If you see this, Tailwind and layout are working.
+</div>
         </section>
 
         {/* SERVICES */}
