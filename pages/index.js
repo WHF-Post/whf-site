@@ -11,14 +11,13 @@ export default function Home() {
 
   const Bullet = () => (
     <Image
-      src="/Bullet_x.png"
+      src="/bullet.png"
       alt="bullet"
-      width={48}
-      height={48}
-      className="inline-block mr-4 align-middle animate-spin-slow"
+      width={50}
+      height={50}
+      className="inline-block mr-3 align-middle"
     />
   );
-
   return (
     <div className="bg-black text-white">
       <Head>
