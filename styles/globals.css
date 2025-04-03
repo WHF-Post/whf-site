@@ -1,13 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Optional: Typewriter animation (you already added in tailwind.config.js) */
 @layer utilities {
-  .animate-typewriter {
-    animation: typewriter 2s steps(20) forwards;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid white;
+  .font-handdrawn {
+    font-family: 'Rock Salt', cursive;
   }
+
+  .animate-glitch:hover {
+    animation: glitch 0.5s infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 4s linear infinite;
+  }
+}
+/* Add this to globals.css */
+
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(100%) rotate(25deg); }
+}
+/* Glass shimmer overlay effect */
+.shimmer-tile::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+  transform: rotate(25deg);
+  animation: shimmer 3s infinite linear;
+  pointer-events: none;
+  z-index: 2;
+  border-radius: inherit;
+}
+.apply-button {
+  @apply bg-white text-black px-5 py-3 rounded-full shadow-lg hover:scale-110 hover:bg-gray-100 transition-transform duration-300;
+}
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-scroll-x {
+  animation: scroll-x 60s linear infinite;
 }

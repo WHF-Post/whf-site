@@ -1,0 +1,17 @@
+# Dependencies
+node_modules
+
+# Build output
+.next
+out
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+
+# Env variables (if you ever use them)
+.env

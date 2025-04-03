@@ -1,44 +1,27 @@
-import React from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 
 export default function ThankYou() {
   return (
-    <>
-      <Head>
-        <title>Thanks – WHF</title>
-      </Head>
+    <div className="flex flex-col items-center justify-center min-h-screen text-center bg-black text-white px-6">
+      <h1 className="text-5xl font-handdrawn mb-4">Thank You</h1>
+      <p className="text-lg max-w-xl mb-8">
+        Your message has been sent. I’ll be in touch soon — if it’s urgent, you already know how to reach me.
+      </p>
 
-      <div className="min-h-screen bg-black text-white px-6 py-20 text-center">
-        <h1 className="text-4xl font-bold mb-6">Thank You!</h1>
-        <p className="text-lg text-gray-400 mb-12">
-          We’ll be in touch soon. In the meantime, enjoy this...
-        </p>
+      <video
+        className="rounded-lg shadow-lg mb-8 w-full max-w-xl"
+        controls
+        autoPlay
+        muted
+        playsInline
+        src="/Neyo Curves Fritz.mp4"
+      />
 
-        <div className="max-w-3xl mx-auto aspect-video mb-3">
-          <iframe
-            src="https://f.io/P8270C-6"
-            className="w-full h-full rounded-lg"
-            frameBorder="0"
-            allowFullScreen
-          ></iframe>
-        </div>
-
-        <p className="text-sm text-gray-500 mb-12 italic">
-          Thanks for stopping by. Don&apos;t do me like Ne-Yo did Africa!
-        </p>
-
-        <p className="text-base text-gray-400 max-w-xl mx-auto italic mb-12">
-          Production is hard, but we’re used to being the last one with the ball —
-          always getting across the finish line. Talk soon!
-        </p>
-
-        <Link href="/">
-          <button className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-800 transition-all duration-200 glitch-glow">
-            Return to Homepage
-          </button>
-        </Link>
-      </div>
-    </>
+      <Link href="/">
+        <button className="bg-white text-black px-5 py-2 rounded-full shadow hover:scale-105 transition">
+          Return Home
+        </button>
+      </Link>
+    </div>
   );
 }

@@ -1,36 +1,32 @@
-// pages/index.js
 import React, { useRef } from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 export default function Home() {
   const aboutRef = useRef(null);
   const servicesRef = useRef(null);
   const contactRef = useRef(null);
 
-  const scrollToSection = (ref) => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const Bullet = () => (
+    <Image
+      src="/Bullet_x.png"
+      alt="bullet"
+      width={48}
+      height={48}
+      className="inline-block mr-4 align-middle animate-spin-slow"
+    />
+  );
 
   return (
-    <div className="bg-black text-white font-sans">
+    <div className="bg-black text-white">
       <Head>
         <title>Whitehouse Films</title>
-        <meta name="description" content="Cinematic storytelling from Charles White." />
+        <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet" />
       </Head>
 
-      {/* Navigation */}
-      <header className="fixed top-0 left-0 w-full bg-black bg-opacity-80 z-50 px-6 py-4 flex justify-between items-center border-b border-gray-800">
-        <div className="text-xl font-bold">WHF</div>
-        <nav className="space-x-6 text-sm md:text-base">
-          <button onClick={() => scrollToSection(aboutRef)} className="hover:underline">About</button>
-          <button onClick={() => scrollToSection(servicesRef)} className="hover:underline">Services</button>
-          <Link href="/work" className="hover:underline">Work</Link>
-          <button onClick={() => scrollToSection(contactRef)} className="hover:underline">Contact</button>
-        </nav>
-      </header>
-
-      {/* Hero Video Section */}
+      {/* Hero Section */}
       <section className="h-screen w-full relative overflow-hidden">
         <video
           src="/WHF_Homepage_Video_converted.mp4"
@@ -39,89 +35,132 @@ export default function Home() {
           muted
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
-        ></video>
+        />
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
       </section>
 
       {/* About Section */}
       <section ref={aboutRef} id="about" className="py-20 px-6 bg-black text-white scroll-mt-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-semibold mb-6">Who We Are</h2>
-          <p className="text-gray-400 text-lg leading-relaxed">
-            Whitehouse Films is the creative lab of Charles White — an award-winning editor, filmmaker, and storyteller with 20+ years in the game. From major networks like BET, Fox News, and NFL Films to viral podcast moments and branded campaigns, WHF transforms raw footage into cinematic stories that connect.
+          <h2 className="text-5xl font-handdrawn hover:animate-glitch">Who We Are</h2>
+          <p className="text-gray-400 text-lg leading-relaxed mt-6">
+            Whitehouse Films is the creative lab of Charles "Chuck" White — a veteran broadcast editor,
+            filmmaker, and storyteller with two decades in the game. From major networks like BET, MTV2,
+            and MSNBC to branded campaigns for iconic magazines and music labels, WHF transforms raw footage
+            into cinematic stories that hit.
           </p>
           <p className="text-gray-500 mt-6 text-base leading-relaxed">
-            Based in North Carolina, rooted in Newark, and shaped by years in New York’s post-production trenches, WHF brings grit, polish, and purpose to every frame. Whether you're launching a docuseries, building a brand, or just tired of basic edits, you're in the right place.
+            Based in North Carolina, rooted in Newark, and sharpened in New York’s post trenches, WHF brings
+            polish, purpose, and that underground energy to every project. Whether you’re launching a docuseries,
+            building a brand, or tired of the same safe edits — you just found your secret weapon.
           </p>
         </div>
       </section>
 
       {/* Services Section */}
-      <section ref={servicesRef} id="services" className="py-20 px-6 bg-gray-900 text-white scroll-mt-20">
+      <section ref={servicesRef} id="services" className="py-20 px-6 bg-black text-white scroll-mt-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-semibold mb-6">What We Do</h2>
-          <div className="space-y-10">
+          <h2 className="text-5xl font-handdrawn hover:animate-glitch">What We Do</h2>
+          <div className="space-y-10 text-center mt-10">
             <div>
-              <h3 className="text-2xl font-semibold mb-2">🎬 Editing Services</h3>
+              <h3 className="text-2xl font-semibold mb-2 flex items-center justify-center">
+                <Bullet /> Editing Services
+              </h3>
               <p className="text-gray-300">Professional editing for documentaries, branded content, and episodic series.</p>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold mb-2">🚀 Influencer Packages</h3>
+              <h3 className="text-2xl font-semibold mb-2 flex items-center justify-center">
+                <Bullet /> Influencer Packages
+              </h3>
               <p className="text-gray-300">Launch or upgrade your content with branded openers, graphics, and reels.</p>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold mb-2">🔁 Recurring Content Plans</h3>
+              <h3 className="text-2xl font-semibold mb-2 flex items-center justify-center">
+                <Bullet /> Recurring Content Plans
+              </h3>
               <p className="text-gray-300">Monthly plans for social content, campaigns, and marketing support.</p>
             </div>
             <div>
-              <h3 className="text-2xl font-semibold mb-2">🎓 Education</h3>
+              <h3 className="text-2xl font-semibold mb-2 flex items-center justify-center">
+                <Bullet /> Education
+              </h3>
               <p className="text-gray-300">Beginner editing course launching soon in partnership with Artistic Heights Academy.</p>
             </div>
           </div>
         </div>
       </section>
-
+      <div className="text-center mt-16">
+  <Link
+    href="/work"
+    className="inline-block bg-white text-black font-semibold py-3 px-6 rounded-full hover:bg-gray-200 transition"
+  >
+    SEE THE WORK
+  </Link>
+</div>
       {/* Contact Section */}
       <section ref={contactRef} id="contact" className="py-20 px-6 bg-black text-white scroll-mt-20">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-4xl font-semibold mb-6">Get In Touch</h2>
-          <p className="text-gray-400 mb-8">Have a project in mind or just want to connect? Drop a line.</p>
+          <p className="text-gray-400 mb-8">Have a project in mind or just want to connect? Drop me a message.</p>
+
           <form
-            action="https://formspree.io/f/mjvnavko"
-            method="POST"
-            className="space-y-6"
-          >
-            <input
+  action="https://formspree.io/f/mldjwlvk"
+  method="POST"
+  onSubmit={() => setTimeout(() => (window.location.href = '/thankyou'), 100)}
+>            <input
               type="text"
               name="name"
-              placeholder="Your Name"
               required
-              className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded"
+              placeholder="Your Name"
+              className="w-full p-3 rounded bg-white text-black border border-white"
             />
             <input
               type="email"
               name="email"
-              placeholder="Your Email"
               required
-              className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded"
+              placeholder="Your Email"
+              className="w-full p-3 rounded bg-white text-black border border-white"
             />
             <textarea
               name="message"
-              placeholder="Your Message"
               required
-              className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded h-32"
+              placeholder="Your Message"
+              className="w-full p-3 rounded bg-white text-black border border-white"
+              rows="5"
             ></textarea>
             <button
               type="submit"
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-800 rounded-full transition-all duration-200"
+              className="bg-white text-black font-bold py-2 px-6 rounded hover:bg-gray-200 transition"
             >
-              Send Message
+              Send
             </button>
           </form>
-          <div className="mt-10 flex justify-center space-x-6 text-blue-400">
-            <a href="https://instagram.com/whitehousefilms" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://youtube.com/@whitehousefilms" target="_blank" rel="noopener noreferrer">YouTube</a>
-            <a href="https://tiktok.com/@whitehousefilms" target="_blank" rel="noopener noreferrer">TikTok</a>
+
+          <div className="mt-10 flex justify-center space-x-6">
+            <a
+              href="https://www.facebook.com/profile.php?id=100046536647810"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-full p-3 hover:scale-105 transition"
+            >
+              <FaFacebookF className="text-black w-5 h-5" />
+            </a>
+            <a
+              href="https://www.instagram.com/whitehouse_films/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-full p-3 hover:scale-105 transition"
+            >
+              <FaInstagram className="text-black w-5 h-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/chuckwhiteedits/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-full p-3 hover:scale-105 transition"
+            >
+              <FaLinkedinIn className="text-black w-5 h-5" />
+            </a>
           </div>
         </div>
       </section>
