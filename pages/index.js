@@ -33,7 +33,7 @@ export default function Home() {
           loop
           muted
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-contain sm:object-cover"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
       </section>
