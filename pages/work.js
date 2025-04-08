@@ -40,12 +40,12 @@ const projects = [
       },
       {
         src: '/Thumbs/DDD_Thumb.png',
-        link: 'https://f.io/xrw3U3nA',
+        link: 'https://f.io/cSZ274lF',
         alt: "Demario’s Devoted Dreamers",
       },
       {
         src: '/Thumbs/HipHouse_Thumb.png',
-        link: 'https://f.io/RvCixFv8',
+        link: 'https://www.youtube.com/watch?v=ysSQ16gkS1c',
         alt: 'In Our DNA: Hip House',
       },
       {
