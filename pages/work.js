@@ -168,8 +168,8 @@ export default function Work() {
   alt={project.alt || project.title}
   width={640}
   height={360}
-  className="w-full h-[200px] object-cover rounded-2xl"
-/>
+  className="aspect-[16/9] w-full object-cover rounded-2xl"
+  />
               <div className="absolute inset-0 rounded-2xl pointer-events-none shimmer-tile"></div>
               </a>
             ))}
