@@ -163,14 +163,14 @@ export default function Work() {
                 rel="noopener noreferrer"
                 className={`relative rounded-lg overflow-hidden border border-white p-4 transform hover:scale-105 transition duration-300 bg-black ${project.extraClass || ''}`}
               >
-                <Image
-                  src={project.src || `/Thumbs/${project.thumbnail}`}
-                  alt={project.alt || project.title}
-                  width={640}
-                  height={360}
-                  className="w-full h-auto object-cover rounded-2xl"
-                />
-                <div className="absolute inset-0 rounded-2xl pointer-events-none shimmer-tile"></div>
+<Image
+  src={project.src || `/Thumbs/${project.thumbnail}`}
+  alt={project.alt || project.title}
+  width={640}
+  height={360}
+  className="w-full h-[200px] object-cover rounded-2xl"
+/>
+              <div className="absolute inset-0 rounded-2xl pointer-events-none shimmer-tile"></div>
               </a>
             ))}
           </div>
