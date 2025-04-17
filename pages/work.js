@@ -34,6 +34,10 @@ const projects = [
     category: 'Docs & Series',
     items: [
       {
+        src: '/Thumbs/TOT_BMI_thumb.png',
+        link: 'https://www.youtube.com/watch?v=vio2cfps5PY',
+        alt: 'Inside Royal Studios with Soul Legend Al Green',
+      },{
         src: '/Thumbs/TOT_Thumb.png',
         link: 'https://www.youtube.com/watch?v=MdymD8jlaBE&t=8s',
         alt: 'Tale of the Tape',
