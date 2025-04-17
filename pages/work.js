@@ -34,7 +34,7 @@ const projects = [
     category: 'Docs & Series',
     items: [
       {
-        src: '/Thumbs/TOT_BMI_thumb.png',
+        src: '/Thumbs/BMI_thumb.png',
         link: 'https://www.youtube.com/watch?v=vio2cfps5PY',
         alt: 'Inside Royal Studios with Soul Legend Al Green',
       },{
